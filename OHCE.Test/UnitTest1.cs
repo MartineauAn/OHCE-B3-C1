@@ -52,7 +52,7 @@ namespace OHCE.Test
             //QUAND on saisit une chaîne
             var resultat = new OHCE(new LangueStub()).Traitement("test de chaine");
 
-            //ALORS « Bonjour » est envoyé avant toute réponse
+            //ALORS « au revoir » est envoyé avant toute réponse
             Assert.EndsWith("Au revoir", resultat);
         }
 
@@ -92,9 +92,9 @@ namespace OHCE.Test
         public void TestAuRevoirLangue(ILangue langue)
         {
             //QUAND on saisit une chaîne
-            var resultat = new OHCE(new LangueStub()).Traitement("test de chaine");
+            var resultat = new OHCE(langue).Traitement("test de chaine");
 
-            //ALORS « Bonjour » est envoyé avant toute réponse
+            //ALORS « au revoir » est envoyé avant toute réponse
             Assert.EndsWith(langue.AuRevoir, resultat);
         }
 
