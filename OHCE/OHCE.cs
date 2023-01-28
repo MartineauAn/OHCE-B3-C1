@@ -9,9 +9,11 @@ namespace OHCE
     public class OHCE
     {
         public ILangue langue;
-        public OHCE (ILangue langue)
+        public string periode;
+        public OHCE (ILangue langue, string periode)
         {
             this.langue = langue;
+            this.periode = periode;
         }
 
         public string Traitement(string mot)
