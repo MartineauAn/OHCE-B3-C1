@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OHCE.Test.utilities
 {
-    internal class BonjourClassData : IEnumerable<object[]>
+    internal class SalutationsClassData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {

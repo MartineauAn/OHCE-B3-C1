@@ -11,5 +11,7 @@ namespace OHCE
         public string BienDit => "Well said !";
 
         public string Bonjour => "Hello";
+
+        public string AuRevoir => "GoodBye";
     }
 }

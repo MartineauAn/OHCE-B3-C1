@@ -76,7 +76,7 @@ namespace OHCE.Test
         }
 
         [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on saisit une chaîne ALORS <bonjour> de cette langue est envoyé avant tout")]
-        [ClassData(typeof(BonjourClassData))]
+        [ClassData(typeof(SalutationsClassData))]
         public void TestBonjourLangue(ILangue langue)
         {
 
@@ -85,6 +85,17 @@ namespace OHCE.Test
 
             //ALORS <bonjour> de cette langue est envoyé avant tout
             Assert.StartsWith(langue.Bonjour, resultat);
+        }
+
+        [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on saisit une chaîne ALORS <auRevoir> dans cette langue est envoyé en dernier")]
+        [ClassData(typeof(SalutationsClassData))]
+        public void TestAuRevoirLangue(ILangue langue)
+        {
+            //QUAND on saisit une chaîne
+            var resultat = new OHCE(new LangueStub()).Traitement("test de chaine");
+
+            //ALORS « Bonjour » est envoyé avant toute réponse
+            Assert.EndsWith(langue.AuRevoir, resultat);
         }
 
     }
