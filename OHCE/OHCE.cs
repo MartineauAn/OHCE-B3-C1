@@ -31,7 +31,7 @@ namespace OHCE
                 stringBuilder.Append(langue.BienDit);
             }
 
-            stringBuilder.Append(langue.AuRevoir);
+            stringBuilder.Append(langue.AuRevoir + periode);
 
             return stringBuilder.ToString();
         }
