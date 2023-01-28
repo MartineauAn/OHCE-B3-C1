@@ -32,5 +32,15 @@ namespace OHCE.Test
             Assert.Contains("Bien dit !", resultat);
         }
 
+        [Fact(DisplayName = "QUAND on saisit une chaîne ALORS « Bonjour » est envoyé avant toute réponse")]
+        public void TestBonjour()
+        {
+            //QUAND on saisit une chaîne
+            var resultat = new OHCE().Traitement("test de chaine");
+
+            //ALORS « Bonjour » est envoyé avant toute réponse
+            Assert.Contains("Bonjour", resultat);
+        }
+
     }
 }
