@@ -25,7 +25,7 @@ namespace OHCE
 
             if (miroir == mot)
             {
-                stringBuilder.Append("Bien dit !");
+                stringBuilder.Append(langue.BienDit);
             }
 
             stringBuilder.Append("Au revoir");
