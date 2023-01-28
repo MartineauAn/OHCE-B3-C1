@@ -9,5 +9,7 @@ namespace OHCE
     public class LangueFrançais : ILangue
     {
         public string BienDit => "Bien dit !";
+
+        public string Bonjour => "Bonjour";
     }
 }

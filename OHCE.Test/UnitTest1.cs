@@ -58,7 +58,7 @@ namespace OHCE.Test
 
         [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on entre un palindrome ALORS il est renvoyé ET le < bienDit > de cette langue est envoyé")]
         [ClassData(typeof(PalindromeClassData))]
-        public void TestPalindromeLangue(ILangue langue, string palindrome, string bienDit)
+        public void TestPalindromeLangue(ILangue langue, string palindrome)
         {
 
             //QUAND on envoie un mot
@@ -72,7 +72,19 @@ namespace OHCE.Test
             resultat = resultat[endOfPalindrome..];
 
             //ET 'Bien dit !' est ajouté
-            Assert.Contains(bienDit, resultat);
+            Assert.Contains(langue.BienDit, resultat);
+        }
+
+        [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on saisit une chaîne ALORS <bonjour> de cette langue est envoyé avant tout")]
+        [ClassData(typeof(BonjourClassData))]
+        public void TestBonjourLangue(ILangue langue)
+        {
+
+            //QUAND on saisit une chaîne
+            var resultat = new OHCE(langue).Traitement("test de chaine");
+
+            //ALORS <bonjour> de cette langue est envoyé avant tout
+            Assert.StartsWith(langue.Bonjour, resultat);
         }
 
     }

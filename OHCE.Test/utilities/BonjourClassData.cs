@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace OHCE.Test.utilities
 {
-    public class PalindromeClassData : IEnumerable<object[]>
+    internal class BonjourClassData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { new LangueFrançais(), "laval"};
-            yield return new object[] { new LangueAnglais(), "radar"};
+            yield return new object[] { new LangueFrançais()};
+            yield return new object[] { new LangueAnglais()};
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
