@@ -1,3 +1,7 @@
+using static System.Reflection.Metadata.BlobBuilder;
+using System;
+using OHCE.Test.utilities;
+
 namespace OHCE.Test
 {
     public class UnitTest1
@@ -50,6 +54,25 @@ namespace OHCE.Test
 
             //ALORS « Bonjour » est envoyé avant toute réponse
             Assert.EndsWith("Au revoir", resultat);
+        }
+
+        [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue QUAND on entre un palindrome ALORS il est renvoyé ET le < bienDit > de cette langue est envoyé")]
+        [ClassData(typeof(PalindromeClassData))]
+        public void TestPalindromeLangue(ILangue langue, string palindrome, string bienDit)
+        {
+
+            //QUAND on envoie un mot
+            var resultat = new OHCE(langue).Traitement(palindrome);
+
+            //ALORS on obtient celui-ci
+            Assert.Contains(palindrome, resultat);
+
+            var indexOfPalindrome = resultat.IndexOf(palindrome, StringComparison.Ordinal);
+            var endOfPalindrome = indexOfPalindrome + palindrome.Length;
+            resultat = resultat[endOfPalindrome..];
+
+            //ET 'Bien dit !' est ajouté
+            Assert.Contains(bienDit, resultat);
         }
 
     }

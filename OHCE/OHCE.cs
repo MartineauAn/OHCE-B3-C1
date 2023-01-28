@@ -8,6 +8,11 @@ namespace OHCE
 {
     public class OHCE
     {
+        public ILangue langue;
+        public OHCE (ILangue langue)
+        {
+            this.langue = langue;
+        }
 
         public string Traitement(string mot)
         {
