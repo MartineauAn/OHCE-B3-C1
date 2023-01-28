@@ -11,7 +11,7 @@ namespace OHCE.Test
         public void TestMiroir()
         {
             //QUAND on envoie un mot
-            var resultat = new OHCE().Traitement("laval");
+            var resultat = new OHCE(new LangueStub()).Traitement("laval");
 
             //ALORS on obtient son miroir
             Assert.Contains("laval", resultat);
@@ -23,7 +23,7 @@ namespace OHCE.Test
             const string palindrome = "bob";
 
             //QUAND on envoie un mot
-            var resultat = new OHCE().Traitement(palindrome);
+            var resultat = new OHCE(new LangueStub()).Traitement(palindrome);
 
             //ALORS on obtient celui-ci
             Assert.Contains(palindrome, resultat);
@@ -40,7 +40,7 @@ namespace OHCE.Test
         public void TestBonjour()
         {
             //QUAND on saisit une chaîne
-            var resultat = new OHCE().Traitement("test de chaine");
+            var resultat = new OHCE(new LangueStub()).Traitement("test de chaine");
 
             //ALORS « Bonjour » est envoyé avant toute réponse
             Assert.StartsWith("Bonjour", resultat);
@@ -50,7 +50,7 @@ namespace OHCE.Test
         public void TestAuRevoir()
         {
             //QUAND on saisit une chaîne
-            var resultat = new OHCE().Traitement("test de chaine");
+            var resultat = new OHCE(new LangueStub()).Traitement("test de chaine");
 
             //ALORS « Bonjour » est envoyé avant toute réponse
             Assert.EndsWith("Au revoir", resultat);
