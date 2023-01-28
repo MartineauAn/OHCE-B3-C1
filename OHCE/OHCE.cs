@@ -11,7 +11,7 @@ namespace OHCE
 
         public string Traitement(string mot)
         {
-            return new string(mot.Reverse().ToArray());
+            return new string(mot.Reverse().ToArray()) + "Bien dit !";
         }
     }
 }
