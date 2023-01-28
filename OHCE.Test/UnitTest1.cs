@@ -39,7 +39,7 @@ namespace OHCE.Test
             var resultat = new OHCE().Traitement("test de chaine");
 
             //ALORS « Bonjour » est envoyé avant toute réponse
-            Assert.Contains("Bonjour", resultat);
+            Assert.StartsWith("Bonjour", resultat);
         }
 
     }
