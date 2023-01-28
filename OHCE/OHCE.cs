@@ -23,7 +23,7 @@ namespace OHCE
                 stringBuilder.Append("Bien dit !");
             }
 
-            return stringBuilder.ToString();
+            return stringBuilder.ToString() + "Au revoir";
         }
     }
 }
