@@ -13,6 +13,8 @@ namespace OHCE
         {
             var stringBuilder = new StringBuilder();
 
+            stringBuilder.Append("Bonjour");
+
             var miroir = new string(mot.Reverse().ToArray());
             stringBuilder.Append(miroir);
 
@@ -21,7 +23,7 @@ namespace OHCE
                 stringBuilder.Append("Bien dit !");
             }
 
-            return "Bonjour" + stringBuilder.ToString();
+            return stringBuilder.ToString();
         }
     }
 }
