@@ -42,5 +42,15 @@ namespace OHCE.Test
             Assert.StartsWith("Bonjour", resultat);
         }
 
+        [Fact(DisplayName = "QUAND on saisit une chaîne ALORS « Au revoir » est envoyé en dernier")]
+        public void TestAuRevoir()
+        {
+            //QUAND on saisit une chaîne
+            var resultat = new OHCE().Traitement("test de chaine");
+
+            //ALORS « Bonjour » est envoyé avant toute réponse
+            Assert.EndsWith("Au revoir", resultat);
+        }
+
     }
 }
