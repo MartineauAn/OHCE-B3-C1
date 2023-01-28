@@ -11,7 +11,17 @@ namespace OHCE
 
         public string Traitement(string mot)
         {
-            return new string(mot.Reverse().ToArray()) + "Bien dit !";
+            var stringBuilder = new StringBuilder();
+
+            var miroir = new string(mot.Reverse().ToArray());
+            stringBuilder.Append(miroir);
+
+            if (miroir == mot)
+            {
+                stringBuilder.Append("Bien dit !");
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }
