@@ -11,7 +11,7 @@ namespace OHCE
 
         public string Traitement(string mot)
         {
-            return "laval";
+            return new string(mot.Reverse().ToArray());
         }
     }
 }
