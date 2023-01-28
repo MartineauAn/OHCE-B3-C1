@@ -21,6 +21,7 @@ namespace OHCE
             var stringBuilder = new StringBuilder();
 
             stringBuilder.Append(langue.Bonjour);
+            stringBuilder.Append(periode);
 
             var miroir = new string(mot.Reverse().ToArray());
             stringBuilder.Append(miroir);
