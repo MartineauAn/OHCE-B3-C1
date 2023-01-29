@@ -13,5 +13,7 @@ namespace OHCE
         public string Bonjour => "Bonjour";
 
         public string AuRevoir => "Au revoir";
+
+        public string Saisie => "Veuillez saisir une chaine de caractère";
     }
 }

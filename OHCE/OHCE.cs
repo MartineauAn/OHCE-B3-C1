@@ -20,20 +20,38 @@ namespace OHCE
         {
             var stringBuilder = new StringBuilder();
 
-            stringBuilder.Append(langue.Bonjour);
-            stringBuilder.Append(periode);
+            stringBuilder.Append(this.DireBonjour());
+
+            stringBuilder.Append(" " + this.Miroir(mot) + " ");
+
+            stringBuilder.Append(this.DireAuRevoir());
+
+            return stringBuilder.ToString();
+        }
+
+        public string DireBonjour()
+        {
+            return (langue.Bonjour + " " + periode).Trim();
+        }
+
+        public string Miroir(string mot)
+        {
+            var stringBuilder = new StringBuilder();
 
             var miroir = new string(mot.Reverse().ToArray());
             stringBuilder.Append(miroir);
 
             if (miroir == mot)
             {
-                stringBuilder.Append(langue.BienDit);
+                stringBuilder.Append(" " + langue.BienDit);
             }
 
-            stringBuilder.Append(langue.AuRevoir + periode);
-
             return stringBuilder.ToString();
+        }
+
+        public string DireAuRevoir ()
+        {
+            return (langue.AuRevoir + " " + periode).Trim();
         }
     }
 }

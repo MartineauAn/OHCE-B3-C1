@@ -12,5 +12,6 @@ namespace OHCE.Test.utilities
         public string BienDit => langue.BienDit;
         public string Bonjour => langue.Bonjour;
         public string AuRevoir => langue.AuRevoir;
+        public string Saisie => langue.Saisie;
     }
 }

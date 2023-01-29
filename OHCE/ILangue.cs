@@ -7,5 +7,7 @@
         string Bonjour { get; }
 
         string AuRevoir { get; }
+
+        string Saisie { get; }
     }
 }
